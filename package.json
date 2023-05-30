@@ -1,0 +1,19 @@
+{
+  "name": "project-cypress-001",
+  "version": "1.0.0",
+  "description": "Projeto para aprimorar tecnicas de testes automatizados em Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Cypress",
+    "BDD",
+    "automacao"
+  ],
+  "author": "Marcelo Hideo",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.13.0"
+  }
+}
