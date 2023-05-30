@@ -10,13 +10,10 @@ Repositório dedicado a fazer testes funcionais (e2e) utilizando o Cypress.
 3. [ Evidência de teste](https://docs.google.com/document/d/1WKwj7pamYH3jnRUpH949W1j4HtR5G6bXc4FZLZpVJOE/edit?usp=sharing) documentado. 
 
 4. Serão criados 3 arquivos de testes para mostrar maneiras diferentes de executar testes e2e:
-    <h5>
-
+   
     - `functional-test.cy.js`
     - `tests-with-commands.cy.js`
     - `test-with-locator.cy.js`
-
-    </h5>
 </div>
 <br>
 
