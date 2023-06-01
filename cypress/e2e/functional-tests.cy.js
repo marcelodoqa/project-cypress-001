@@ -37,7 +37,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT002.1 - Inserir uma conta', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
         cy.get('[data-test="menu-settings"]').click()
         cy.get('[href="/contas"]').click()
@@ -49,7 +49,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT002.2 - Alterar nome da conta', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
         cy.get('[data-test="menu-settings"]').click()
         cy.get('[href="/contas"]').click()
@@ -61,7 +61,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT002.3 - Inserir conta com mesmo nome', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
         cy.get('[data-test="menu-settings"]').click()
         cy.get('[href="/contas"]').click()
@@ -72,7 +72,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT002.4 - Excluir conta', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
         cy.get('[data-test="menu-settings"]').click()
         cy.get('[href="/contas"]').click()
@@ -82,7 +82,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT003.1 - Inserir movimentação', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
         cy.get('[data-test="menu-movimentacao"] > .fas').click()
         cy.get('[data-test="descricao"]').type('CT003.1 descricao')
@@ -95,7 +95,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT003.2 - Excluir movimentacao', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
         cy.get('[data-test="menu-extrato"]').click()
         cy.get(':nth-child(1) > .row > .col > [href="#"] > .far').click()
@@ -104,7 +104,7 @@ describe ('Testes funcionais', ()=>{
     })
     it.only('CT003.3 - Editar movimentacao', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
         cy.get('[data-test="menu-extrato"]').click()
         cy.get('#root > div > div > div:nth-child(2) > div.list-group > li:nth-child(1) > div > div.col.col-md-1 > a:nth-child(1) > i').click()
@@ -116,7 +116,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT004.1 - Fazer logout', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.get('[data-test="menu-settings"]').click()
         cy.get('[href="/logout"]').click()
         cy.get('.toast-message')
@@ -124,7 +124,7 @@ describe ('Testes funcionais', ()=>{
     })
     it('CT004.2 - Fazer reset', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
-        cy.login()
+        cy.login('marcelo@mail.com', 'senha123')
         cy.get('[data-test="menu-settings"]').click()
         cy.get('[href="/reset"]').click()
         cy.get('.toast-message')
