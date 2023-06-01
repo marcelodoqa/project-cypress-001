@@ -1,6 +1,7 @@
 # Projeto - Cypress 001
 
-Repositório dedicado a fazer testes funcionais (e2e) utilizando o Cypress.
+
+## Repositório dedicado a fazer testes funcionais (e2e) utilizando o Cypress.
 <div style="border: 1px solid #ccc; padding: 10px;">
 
 1. O site escolhido a ser testado foi o ' [Seu Barriga](https://barrigareact.wcaquino.me/login) '  criado pelo professor Wagner Aquino a fins didáticos.
