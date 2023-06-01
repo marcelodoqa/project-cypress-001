@@ -1,25 +1,15 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('login', ()=>{
+        cy.get('[data-test="email"]').type('marcelo@mail.com')
+        cy.get('[data-test="passwd"]').type('senha123', {logFalse: true})
+        cy.get('.btn').click()
+        cy.get('.toast-message')
+            .should('be.visible')
+            .and('contain', 'Bem vindo,')
+})
+
+Cypress.Commands.add('resetar', ()=>{
+    cy.get('[data-test="menu-settings"]').click()
+    cy.get('[href="/reset"]').click()
+    cy.get('.toast-message')
+            .should('be.visible').and('contain', 'Dados resetados com sucesso!')
+})
