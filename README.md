@@ -1,8 +1,21 @@
-# Projeto - Cypress 001
+# Projeto - Cypress 001 
 
 <p align="left"> <img src="https://guisalmeida.com/static/d625d911d0062643ecc86729b8ecf061/b5381/cypress-cover.png" alt="imagemCypress" /> </p>
 
-## Cypress + mochawesome + pipeline CI/CD Git Actions + locators + commands .
+>Status: ✅ Projeto finalizado
+
+>## Cypress + mochawesome + pipeline CI/CD Git Actions + locators + commands. 
+
+ **Automação de funcionalidades com Cypress, incluindo:**
+
+✅ reports em HTML 
+
+✅ pipeline CI/CD
+
+✅ utilização de commands e locators
+
+✅ documentação (Casos de testes e Evidências)
+
 <br>
 <div style="border: 1px solid #ccc; padding: 10px;">
 
