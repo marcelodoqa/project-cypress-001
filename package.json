@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx cypress run"
+    "build": "npx cypress run",
+    "start": "npm run"
   },
   "keywords": [
     "Cypress",
