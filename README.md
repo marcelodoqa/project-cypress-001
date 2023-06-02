@@ -1,7 +1,9 @@
 # Projeto - Cypress 001
 
+<p align="left"> <img src="https://guisalmeida.com/static/d625d911d0062643ecc86729b8ecf061/b5381/cypress-cover.png" alt="imagemCypress" /> </p>
 
-## Repositório dedicado a fazer testes funcionais (e2e) utilizando o Cypress.
+## Cypress + mochawesome + pipeline CI/CD Git Actions + locators + commands .
+<br>
 <div style="border: 1px solid #ccc; padding: 10px;">
 
 1. O site escolhido a ser testado foi o ' [Seu Barriga](https://barrigareact.wcaquino.me/login) '  criado pelo professor Wagner Aquino a fins didáticos.
@@ -26,6 +28,7 @@
 - Node.js
 - Visual Studio Code
 - Cypress 12.13.0
+- Mochawesome
 - DevTools
 </div>
 
@@ -43,6 +46,9 @@
     ```
 3. ``` js
     npx cypress open
+    ```
+4. ```js
+    npm i mochawesome
     ```
 
 </div>
