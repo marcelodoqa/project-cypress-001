@@ -102,7 +102,7 @@ describe ('Testes funcionais', ()=>{
         cy.get('.toast-message')
             .should('be.visible').and('contain', 'Movimentação removida com sucesso!')
     })
-    it.only('CT003.3 - Editar movimentacao', ()=>{
+    it('CT003.3 - Editar movimentacao', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
         cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()

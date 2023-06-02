@@ -35,7 +35,6 @@ describe('Testes funcionais com comandos personalizados - Conta',()=>{
         cy.visit('/')
         cy.login(dados.user, dados.senha)
         cy.resetar()
-
     })
     it('CT002.1 - Inserir uma conta', ()=>{
         cy.menuContas()

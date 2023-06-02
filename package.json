@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx cypress run",
+    "build": "npx cypress run --reporter mochawesome",
     "start": "npm run"
   },
   "keywords": [
@@ -16,7 +16,8 @@
   "author": "Marcelo Hideo",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.13.0"
+    "cypress": "^12.13.0",
+    "mochawesome": "^7.1.3"
   },
   "dependencies": {
     "@cypress/xpath": "^2.0.3"
