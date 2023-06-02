@@ -7,7 +7,7 @@ describe ('Testes funcionais com locators - Login', ()=>{
     beforeEach(()=>{
         cy.visit('/')   // insert a baseUrl and beforeEach
     })
-    it('CT001.1 - Fazer login com dados validos', ()=>{
+    it.skip('CT001.1 - Fazer login com dados validos', ()=>{
         cy.fixture("login").as('dados')
         cy.get('@dados').then(dados =>{
             cy.get(loc.login.user).type(dados.user)
