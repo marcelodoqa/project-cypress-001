@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+<<<<<<< HEAD
 import loc from '../support/locator'
 import dados from '../support/dados'
 
@@ -82,3 +83,11 @@ describe('Testes funcionais com comandos personalizados - Conta',()=>{
         cy.apareceMensagem('Dados resetados com sucesso!')
     })
 })
+=======
+describe ('Testes funcionais com comandos personalizados - Login', () => {
+  beforeEach( () => {
+      cy.visit('/')   // insert a baseUrl and beforeEach
+      cy.title('React App')
+  })
+});
+>>>>>>> 2087a0c8a0148f815b4dd6d8d7cf8859038f0149

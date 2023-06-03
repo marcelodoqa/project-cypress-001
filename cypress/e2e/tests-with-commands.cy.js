@@ -1,23 +1,26 @@
 /// <reference types="cypress" />
 
-describe ('Testes funcionais com comandos personalizados - Login', ()=>{
-    beforeEach(()=>{
+describe ('Testes funcionais com comandos personalizados - Login', () => {
+    
+    beforeEach(() => {
         cy.visit('/')   // insert a baseUrl and beforeEach
+        cy.title().should('be.equal', 'React App')
     })
-    it('CT001.1 - Fazer login com dados validos', ()=>{
-        cy.login('marcelo@mail.com', 'senha123')
+    it('CT001.1 - Fazer login com dados validos', () => {
+        cy.login(Cypress.env('email'), Cypress.env('senha'))
         cy.apareceMensagem('Bem vindo,')
     })
-    it('CT001.2 - Fazer login com email invalido', ()=>{
+    it('CT001.2 - Fazer login com email invalido', () => {
         cy.login('marcelo@', 'senha123')
         cy.apareceMensagem('Error')
     })
-    it('CT001.3 - Fazer login com senha invalida', ()=>{
+    it('CT001.3 - Fazer login com senha invalida', () => {
         cy.login('marcelo@mail', 'sen3')
         cy.apareceMensagem('Error')
     })
-    it('CT001.4 -  Fazer login com campo email e senha vazio', ()=>{
-        cy.btnClick()
+    it('CT001.4 -  Fazer login com campo email e senha vazio', () => {
+        cy.get('.btn').click()
+        //cy.btnClick() - Não é necessário criar commands com um comando
         cy.apareceMensagem('!')
     })
 })
@@ -25,14 +28,17 @@ describe ('Testes funcionais com comandos personalizados - Login', ()=>{
 describe('Testes funcionais com comandos personalizados - Conta',()=>{
     beforeEach(()=>{
         cy.visit('/')
-        cy.login('marcelo@mail.com', 'senha123')
+        cy.title().should('be.equal', 'React App')
+        cy.login(Cypress.env('email'), Cypress.env('senha'))
+        //cy.login('marcelo@mail.com', 'senha123')
         cy.resetar()
 
     })
     it('CT002.1 - Inserir uma conta', ()=>{
         cy.menuContas()
         cy.campoContas('Conta CT002.1')
-        cy.btnClick()
+        cy.get('.btn').click()
+        //cy.btnClick()
         cy.apareceMensagem('Conta inserida com sucesso!')
     })
     it('CT002.2 - Alterar nome da conta', ()=>{
@@ -40,13 +46,15 @@ describe('Testes funcionais com comandos personalizados - Conta',()=>{
         cy.btnEditarConta('Conta para alterar').click()
         cy.campoContas('CT002').clear()
         cy.campoContas('CT002.2')
-        cy.btnClick()
+        cy.get('.btn').click()
+        //cy.btnClick()
         cy.apareceMensagem('Conta atualizada com sucesso!')
     })
     it('CT002.3 - Inserir conta com mesmo nome', ()=>{
         cy.menuContas()
         cy.campoContas('Conta mesmo nome')
-        cy.btnClick()
+        cy.get('.btn').click()
+        //cy.btnClick()
         cy.apareceMensagem('Error')
     })
     it('CT002.4 - Excluir conta', ()=>{

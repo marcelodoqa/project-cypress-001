@@ -4,9 +4,11 @@
   "description": "Projeto para aprimorar tecnicas de testes automatizados em Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    
     "build": "npx cypress run",
-    "start": "npm run"
+    "start": "npm run",
+    "test": "cypress run",
+    "cy:open": "cypress open"
   },
   "keywords": [
     "Cypress",
