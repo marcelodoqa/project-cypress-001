@@ -8,6 +8,7 @@
     "cy:open": "cypress open",
     "build": "npx cypress run",
     "start": "npm run"
+
   },
   "keywords": [
     "Cypress",

@@ -29,4 +29,56 @@ describe ('Testes funcionais com locators - Login', ()=>{
         cy.apareceMensagem('!')
     })
 })
-/// <reference types="cypress" />
+
+describe('Testes funcionais com comandos personalizados - Conta',()=>{
+    beforeEach(()=>{
+        cy.visit('/')
+        cy.login(dados.user, dados.senha)
+        cy.resetar()
+    })
+    it('CT002.1 - Inserir uma conta', ()=>{
+        cy.menuContas()
+        cy.campoContas('Conta CT002.1')
+        cy.btnClick()
+        cy.apareceMensagem('Conta inserida com sucesso!')
+    })
+    it('CT002.2 - Alterar nome da conta', ()=>{
+        cy.menuContas()
+        cy.btnEditarConta('Conta para alterar').click()
+        cy.campoContas('CT002').clear()
+        cy.campoContas('CT002.2')
+        cy.btnClick()
+        cy.apareceMensagem('Conta atualizada com sucesso!')
+    })
+    it('CT002.3 - Inserir conta com mesmo nome', ()=>{
+        cy.menuContas()
+        cy.campoContas('Conta mesmo nome')
+        cy.btnClick()
+        cy.apareceMensagem('Error')
+    })
+    it('CT002.4 - Excluir conta', ()=>{
+        cy.menuContas()
+        cy.btnExcluirConta('Conta para alterar').click()
+        cy.apareceMensagem('Conta excluída com sucesso!')
+    })
+    it('CT003.1 - Inserir movimentação', ()=>{
+        cy.inserirMoviment('descricao CT003', 'interessado', 10)
+        cy.apareceMensagem('Movimentação inserida com sucesso!')
+    })
+    it('CT003.2 - Excluir movimentacao', ()=>{
+        cy.excluirMoviment('Movimentacao para exclusao')
+        cy.apareceMensagem('Movimentação removida com sucesso!')
+    })
+    it('CT003.3 - Editar movimentacao', ()=>{
+        cy.editarMoviment('Movimentacao para extrato')
+        cy.apareceMensagem('Movimentação alterada com sucesso!')
+    })
+    it('CT004.1 - Fazer logout', ()=>{
+        cy.logout()
+        cy.apareceMensagem('Até Logo!')
+    })
+    it('CT004.2 - Fazer reset', ()=>{
+        cy.resetar()
+        cy.apareceMensagem('Dados resetados com sucesso!')
+    })
+})
