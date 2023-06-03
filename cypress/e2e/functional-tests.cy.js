@@ -7,8 +7,8 @@ describe ('Testes funcionais', ()=>{
         cy.get('[data-test="passwd"]').type('senha123', {logFalse: true})
         cy.get('.btn').click()
         cy.get('.toast-message')
-            .should('be.visible')
-            .and('contain', 'Bem vindo,')
+          .should('be.visible')
+          .and('contain', 'Bem vindo,')
     })
     it('CT001.2 - Fazer login com email invalido', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
