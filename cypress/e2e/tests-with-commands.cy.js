@@ -38,7 +38,6 @@ describe('Testes funcionais com comandos personalizados - Conta',()=>{
         cy.menuContas()
         cy.campoContas('Conta CT002.1')
         cy.get('.btn').click()
-        //cy.btnClick()
         cy.apareceMensagem('Conta inserida com sucesso!')
     })
     it('CT002.2 - Alterar nome da conta', ()=>{
