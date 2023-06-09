@@ -25,12 +25,11 @@
 
 3. [ Evidência de teste](https://docs.google.com/document/d/1WKwj7pamYH3jnRUpH949W1j4HtR5G6bXc4FZLZpVJOE/edit?usp=sharing) documentado. 
 
-4. Serão criados 3 arquivos de testes para mostrar maneiras diferentes de executar testes e2e:
+4. teste localizado em:
    
-    - [`functional-test.cy.js`](cypress/e2e/functional-tests.cy.js)
+    - [`functions-test-refactor.cy.js`](cypress/e2e/functions-tests-refactor.cy.js)
 
-    - [`tests-with-commands.cy.js`](cypress/e2e/tests-with-commands.cy.js)
-    - [`test-with-locator.cy.js`](cypress/e2e/tests-with-locator.cy.js)
+
 </div>
 <br>
 

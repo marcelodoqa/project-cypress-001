@@ -32,10 +32,6 @@ Cypress.Commands.add('btnEditarConta', (contaNome) => {
     cy.xpath(`//table//td[contains(.,'${contaNome}')]/..//i[@class='far fa-edit']`)
 })
 
-// Commands criada para usar somente, pode passar o comando diretamente
-// Cypress.Commands.add('btnClick', ()=>{
-//     cy.get('.btn').click()
-// })
 
 Cypress.Commands.add('btnExcluirConta', (contaNome) => {
     cy.xpath(`//table//td[contains(.,'${contaNome}')]/..//i[@class='far fa-trash-alt']`)
@@ -67,3 +63,4 @@ Cypress.Commands.add('logout', () => {
     cy.get('[data-test="menu-settings"]').click()
     cy.get('[href="/logout"]').click()
 })
+

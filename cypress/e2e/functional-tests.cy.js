@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe ('Testes funcionais', ()=>{
-    it('CT001.1 - Fazer login com dados validos', ()=>{
+    it.only('CT001.1 - Fazer login com dados validos', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
         cy.get('[data-test="email"]').type('marcelo@mail.com')
         cy.get('[data-test="passwd"]').type('senha123', {logFalse: true})
@@ -9,6 +9,7 @@ describe ('Testes funcionais', ()=>{
         cy.get('.toast-message')
           .should('be.visible')
           .and('contain', 'Bem vindo,')
+        cy.getConta()
     })
     it('CT001.2 - Fazer login com email invalido', ()=>{
         cy.visit('https://barrigareact.wcaquino.me/')
