@@ -1,8 +1,8 @@
 
-Cypress.Commands.add('login', (email, senha)=>{
-        cy.get('[data-test="email"]').type(email)
-        cy.get('[data-test="passwd"]').type(senha, {logFalse: true})
-        cy.get('.btn').click()
+Cypress.Commands.add('login', (email, senha) => {
+    cy.get('[data-test="email"]').type(email, { log: false })
+    cy.get('[data-test="passwd"]').type(senha, {log: false })
+    cy.get('.btn').click()
 })
 
 Cypress.Commands.add('resetar', () => {
@@ -15,8 +15,8 @@ Cypress.Commands.add('resetar', () => {
 
 Cypress.Commands.add('apareceMensagem', (msg) => {
     cy.get('.toast-message')
-            .should('be.visible')
-            .and('contain', msg)
+      .should('be.visible')
+      .and('contain', msg)
 })
 
 Cypress.Commands.add('menuContas', () => {
@@ -29,7 +29,13 @@ Cypress.Commands.add('campoContas', (novaConta) => {
 })
 
 Cypress.Commands.add('btnEditarConta', (contaNome) => {
-    cy.xpath(`//table//td[contains(.,'${contaNome}')]/..//i[@class='far fa-edit']`)
+    //cy.xpath(`//table//td[contains(.,'${contaNome}')]/..//i[@class='far fa-edit']`)
+
+    // Melhoria de locator sem precisar do xpath e deixar um comando feio para o código
+    cy.get(`.table tbody, ${contaNome}`)
+      .find('a i.fa-edit')
+      .first()
+      .should('be.visible')
 })
 
 
@@ -39,11 +45,11 @@ Cypress.Commands.add('btnExcluirConta', (contaNome) => {
 
 Cypress.Commands.add('inserirMoviment', (desc, inter, value) => {
     cy.get('[data-test="menu-movimentacao"] > .fas').click()
-        cy.get('[data-test="descricao"]').type(desc)
-        cy.get('[data-test="envolvido"]').type(inter)
-        cy.get('[data-test="valor"]').type(value)
-        cy.get('[data-test="status"]').click()
-        cy.get('.btn-primary').click()
+    cy.get('[data-test="descricao"]').type(desc)
+    cy.get('[data-test="envolvido"]').type(inter)
+    cy.get('[data-test="valor"]').type(value)
+    cy.get('[data-test="status"]').click()
+    cy.get('.btn-primary').click()
 })
 
 Cypress.Commands.add('excluirMoviment',(contaNome) => {
@@ -53,7 +59,10 @@ Cypress.Commands.add('excluirMoviment',(contaNome) => {
 
 Cypress.Commands.add('editarMoviment',(contaNome) => {
     cy.get('[data-test="menu-extrato"]').click()
-    cy.xpath(`//div[@class='list-group']//li//div//div[1]//span[text()='${contaNome}']/../../../div[2]//a[1]`).click()
+    
+    //cy.xpath(`//div[@class='list-group']//li//div//div[1]//span[text()='${contaNome}']/../../../div[2]//a[1]`).click()
+    
+    cy.get('[data-test="mov-row"] i.fa-edit').first().should('be.visible').click()
     cy.get('[data-test="tipo-receita"] > .fas').click()
     cy.wait(500)
     cy.get('.btn-primary').click()
